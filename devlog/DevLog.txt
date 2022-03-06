@@ -13,9 +13,31 @@ will be writing the tests to make sure that the routes work. I noticed that inst
 sending the router as a param, the SupertestSetup.js just imports the hero router, I'll 
 probably change that to make the setup more generalized.
 
+Afternoon:
 Started by testing with postman before writing unit tests. Initially the server wouldn't
 start because the automatic import didn't add the .js extentions. Then getQuestsByHeroId()
 wasn't adding any quests from the database to the heroQuests array. In order to see if the 
 quest was actually correct in the database I made a general route to get all quests from 
 the QuestsDB. Turns out I forgot to add the heroId to the body of the quest in the POST
 route. After adding it everything for backend task 1 and task 2 is working.
+
+tested backend tasks 3 and 4 with postman and everything works as intended.
+
+Started writing unit tests for the backend tasks. I decided to let SupertestSetup()
+always app.use(heroesRouter()) because i need it for quest tests anyway
+
+Bug1: none of my routes for the quests were going through so I switched out
+the if statement in SupertestSetup() for app.use(questsRouter()) then they 
+started to work. i figured it was something to do with how I passed the 
+questRouter() and it turns out I was calling supertestSetup(questsRouter) 
+instead of supertestSetup(questsRouter()).
+
+Bug2: my last test for invalid quest deletion, which is supposed to send a 400 for 
+mismatched heroId and questId sends a 404 "Not Found" instead. It is strange because
+both the patch and delete routes/tests are written very similar but the patch works. 
+I have never used jest before but up until now I had assumed beforeAll worked similar to 
+how it does with JUnit @before, where it is called before each individual test. however if it
+calls beforeAll only once per run of the test Suite, if i patch
+a quest it gets a new questId due to calling the constructor for quest. I'm going to do
+some research into the jest Docs later to see if that is the case. my guess is there is 
+some method called beforeEach() which will have the functionality I expected.
