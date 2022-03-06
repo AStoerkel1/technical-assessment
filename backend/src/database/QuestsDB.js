@@ -26,13 +26,26 @@ export class QuestDB {
 
     /**
      *  A method to get a quest with the specified id
-     * @param {string} id 
+     * @param {string} id of the quest you want to get
      * @returns {Quest} a quest with the specified id
      */
     getQuest(id) {
         return this.quests.find(quest => quest.id === id);
     }
 
+    /**
+     * get the quest with the specified heroId
+     * @param {string} heroId of the hero
+     */
+    getQuestsByHeroId(heroId){
+        let heroQuests = [];
+        for(let i = 0; i < quests.length; i++){
+            if(quests[i].heroId === heroId){
+                heroQuests.push(quests[i]);
+            }
+        }
+        return heroQuests;
+    }
     /**
      * Adds a quest to the database
      * @param {Quest} quest the quest to add to the database
