@@ -1,4 +1,4 @@
-import { Quest } from "../types/Quest";
+import { Quest } from "../types/Quest.js";
 
 export class QuestDB {
     static instance = undefined;
@@ -39,9 +39,9 @@ export class QuestDB {
      */
     getQuestsByHeroId(heroId){
         let heroQuests = [];
-        for(let i = 0; i < quests.length; i++){
-            if(quests[i].heroId === heroId){
-                heroQuests.push(quests[i]);
+        for(let i = 0; i < this.quests.length; i++){
+            if(this.quests[i].heroId === heroId){
+                heroQuests.push(this.quests[i]);
             }
         }
         return heroQuests;
