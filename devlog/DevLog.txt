@@ -1,0 +1,6 @@
+3/5/22
+Today I got familiar with the codebase and got both servers running locally.
+I also decided to get some boiler plate out of the way, makeing a Quest.js in types
+modeled after the Hero class. I also wrote out the QuestsDB.js modeled after HeroesDB.js
+This is all just needed to get started working on the routes and make sure that I'll be
+able to test them.

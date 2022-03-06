@@ -11,6 +11,7 @@ export class Quest {
         this.id = uuid();
         this.name = args.name || 'Generic Quest';
         this.description = args.description || 'Generic Quest';
+        this.heroId = args.heroId;
     }
 
     /**
