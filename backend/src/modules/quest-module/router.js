@@ -23,7 +23,7 @@ export function questsRouter() {
     })
 
     /**
-     * gets a list of all quests
+     * gets a list of all quests in the QuestsDB
      */
     router.get('/quests', (req,res)=>{
         const quests = QuestDB.getInstance().getQuests();
@@ -31,7 +31,7 @@ export function questsRouter() {
     })
 
     /**
-     * creates a new quest
+     * creates a new quest and adds it to the QuestsDB
      */
     router.post('/heroes/:id/quests',(req, res) => {
         const body = req.body;
@@ -66,7 +66,9 @@ export function questsRouter() {
             res.sendStatus(204)
         }
     })
-    // TODO: Task 4
+    /**
+     * Deletes a quest from the DB based on the heroId and questId
+     */
     router.delete('/heroes/:heroId/quests/:questId', (req, res) => {
         const body = req.body;
         const heroId = req.params.heroId;

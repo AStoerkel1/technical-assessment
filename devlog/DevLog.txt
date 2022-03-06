@@ -14,8 +14,8 @@ sending the router as a param, the SupertestSetup.js just imports the hero route
 probably change that to make the setup more generalized.
 
 Started by testing with postman before writing unit tests. Initially the server wouldn't
-start because the automatic import didn't add the .js extention. Then getQuestsByHeroId()
-wasn't adding any quests from the database to the quests array. In order to see if the 
+start because the automatic import didn't add the .js extentions. Then getQuestsByHeroId()
+wasn't adding any quests from the database to the heroQuests array. In order to see if the 
 quest was actually correct in the database I made a general route to get all quests from 
 the QuestsDB. Turns out I forgot to add the heroId to the body of the quest in the POST
-route. After adding it everything for task 1 and task 2 is working.
+route. After adding it everything for backend task 1 and task 2 is working.
