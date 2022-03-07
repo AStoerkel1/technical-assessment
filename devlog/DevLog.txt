@@ -41,3 +41,15 @@ calls beforeAll only once per run of the test Suite, if i patch
 a quest it gets a new questId due to calling the constructor for quest. I'm going to do
 some research into the jest Docs later to see if that is the case. my guess is there is 
 some method called beforeEach() which will have the functionality I expected.
+
+3/7/22
+
+After some research i found the jest docs for beforeAll() and beforeEach() and my hunch was
+correct, so it makes sense that my test returned a 404 because before the mismatched ID test
+there was a test that actually deleted the quest. It also means that the test i made which 
+tested a correct questId and incorrect heroId for delete could have been a false positive,
+so I'm glad i caught this.
+
+my next step will be to do some research on Angular since I have never used it before.
+I'll probably watch a youtube video about making a simple hello world with Angular and
+express just to get my feet wet before I dive into the frontend for this project.

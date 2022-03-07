@@ -7,7 +7,7 @@ let QUESTID = '';
 let WRONGHEROID = '';
 
 describe('Quests Module', ()=> {
-    beforeAll(async () => {
+    beforeEach(async () => {
         // Get a hero id to use for getting/updating/deleting
         await request.post('/heroes')
             .send({
@@ -113,9 +113,12 @@ describe('Quests Module', ()=> {
                     description: "changed Description"
                 })
                 .expect(400, done);
-        })
+        });
     });
 
+    /**
+     * test the delete route for quests
+     */
     describe('DELETE /heroes/:heroId/quests/:questId', ()=>{
         it('should return a 204 for a successfully deleted quest', done=> {
             request.delete(`/heroes/${HEROID}/quests/${QUESTID}`)
