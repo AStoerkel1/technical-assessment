@@ -86,3 +86,9 @@ Click on the "Delete" button:
 User is prompted to confirm that they would like to delete the selected hero. Upon pressing confirm,
 the user is directed back to the full hero list with a message that confirms whether the hero was 
 successfully deleted.
+
+Trouble on task 1: I realized that i would need to send hero Data through the route so that i would have
+the hero's information to display. i thought that i needed to use @Input but i realized that would only work
+if i made each list item it's own component so i had to do a lot of digging on how to get params from routes.
+I couldn't find any good examples in the angular docs, but after googling around I found what I was
+looking for.
