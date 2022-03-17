@@ -53,3 +53,36 @@ so I'm glad i caught this.
 my next step will be to do some research on Angular since I have never used it before.
 I'll probably watch a youtube video about making a simple hello world with Angular and
 express just to get my feet wet before I dive into the frontend for this project.
+
+3/17/22
+Ok Looking at the tasks for the front end creating and updating are going to be
+forms and delete should just be a button that makes the confirmation dialog appear.
+
+Task 1: 
+Then when you click on a hero it takes you to the page with detailed information on the hero with three
+buttons at the bottom of the page to update or delete the hero and one button to go back to 
+the main hero list. 
+
+I should make a hero-details component with the Name, class, and level of the hero.
+
+I should put all the button components into their own container component so that it's easier to reuse.
+
+Task 2:
+click on "Create New Hero":
+It makes the most sense to put a "create" button at the bottom of the 
+main hero list which takes the user to a new page for the form with three empty text input fields (name,
+class, level) and a submit button which takes the user to the hero list page with a message "the hero was 
+successfully created".
+
+Task 3:
+Click on the "Update" Button:
+user is directed to a new page with a form. It has the same input fields as "create" except they are 
+pre-filled with the current information about the hero. Clicking on submit will direct the user back 
+to the hero list page with the new hero and a message about whether the hero was successfully
+updated.
+
+Task 4: 
+Click on the "Delete" button:
+User is prompted to confirm that they would like to delete the selected hero. Upon pressing confirm,
+the user is directed back to the full hero list with a message that confirms whether the hero was 
+successfully deleted.
