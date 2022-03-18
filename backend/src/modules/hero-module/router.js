@@ -39,7 +39,7 @@ export function heroesRouter() {
         const body = req.body;
         const hero = new Hero(body);
         HeroesDB.getInstance().createHero(hero);
-        res.sendStatus(201);
+        res.status(201).send({"message": "Created"});
     });
 
     /**

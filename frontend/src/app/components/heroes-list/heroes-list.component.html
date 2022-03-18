@@ -1,7 +1,11 @@
-<h1>Hero List</h1>
-<ul>
-    <!--Displays a list of hero names-->
-    <li *ngFor="let hero of heroes">
-        <a routerLink="details/{{hero.id}}">{{ hero.name }}</a>
-    </li>
-</ul>
+<div><h1>Hero List</h1></div>
+
+<!--Displays a list of hero names-->
+<div *ngFor="let hero of heroes" class="heroList">
+    <div class="heroItem">
+        <div class="heroName" routerLink="details/{{hero.id}}"><h3>{{hero.name}}</h3></div>
+        <div class="del"><app-button color="red" text="x" (btnClick)="onDelete(hero.id)"></app-button></div>
+    </div>
+</div>
+<div><app-button color="green" text="Create New Hero" routerLink="/create-hero"></app-button></div>
+

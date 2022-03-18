@@ -55,7 +55,7 @@ I'll probably watch a youtube video about making a simple hello world with Angul
 express just to get my feet wet before I dive into the frontend for this project.
 
 3/17/22
-Ok Looking at the tasks for the front end creating and updating are going to be
+Looking at the tasks for the front end creating and updating are going to be
 forms and delete should just be a button that makes the confirmation dialog appear.
 
 Task 1: 
@@ -90,5 +90,16 @@ successfully deleted.
 Trouble on task 1: I realized that i would need to send hero Data through the route so that i would have
 the hero's information to display. i thought that i needed to use @Input but i realized that would only work
 if i made each list item it's own component so i had to do a lot of digging on how to get params from routes.
-I couldn't find any good examples in the angular docs, but after googling around I found what I was
-looking for.
+I couldn't find any good examples in the angular docs, but after googling around I found the ActivatedRoute
+Module. 
+
+task 2 bugs: Everything seemed to be working at first glance but initially it would only route me back to the
+list view half the time(before i did any error handling). I was getting an HttpErrorResponse with code 201. the
+message was "SyntaxError: Unexpected token C in JSON at position 0". so it was trying to parse the string response
+as JSON. Nothing changed when i changed the generic type of the post call. it would always try to read it as json 
+so i went to the backend and just sent res.status(201).send({"message": "Created"}). I wish i could have a clearer
+picture of why this happened but I spent too much time already.
+
+task 4: In the future I'll probably add a prettier confirmation box with it's own component. No big problems here,
+although, it's important to note that the backend API also uses .sendStatus() with a 204 code which sends no content,
+I may not be getting the same error as task 2 because the response is null.

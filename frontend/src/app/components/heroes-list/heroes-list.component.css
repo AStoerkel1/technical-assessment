@@ -1,0 +1,16 @@
+.heroItem{
+    flex: auto;
+    display: flex;
+    margin: 10px;
+    width: 50%;
+}
+.heroName:hover{
+    cursor: pointer;
+    background-color: lightgray;
+}
+.heroName{
+    padding-left:50px;
+    padding-right: 50px;
+}
+
+

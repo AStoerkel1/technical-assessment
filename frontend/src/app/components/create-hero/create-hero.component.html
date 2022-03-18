@@ -1,0 +1,11 @@
+<h1>Create a new Hero</h1>
+<form (ngSubmit)="onSubmit()">
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name" [(ngModel)]="name" placeholder="Add Name"><br>
+    <label for="Class">Class:</label><br>
+    <input type="text" id="class" name="class" [(ngModel)]="class" placeholder="Add Class"><br>
+    <label for="level">Level:</label><br>
+    <input type="number" id="level" name="level" [(ngModel)]="level" placeholder="Add Level" min="1"><br>
+    <input type="submit" value="Create Hero" class="btn">
+</form>
+<app-button color="green" text="Hero List" routerLink="/"></app-button>
