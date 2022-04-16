@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaderResponse, HttpResponse } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Hero } from '../types/Hero';
-import { Observable } from 'rxjs';
+import { lastValueFrom } from 'rxjs';
 import { Message } from '@angular/compiler/src/i18n/i18n_ast';
 
 
@@ -19,7 +19,7 @@ export class BackendService {
    * @returns An array of heroes
    */
   getHeroes(): Promise<Hero[]> {
-    return this.http.get<Hero[]>(`${environment.api}/heroes`).toPromise();
+    return lastValueFrom(this.http.get<Hero[]>(`${environment.api}/heroes`));
   }
 
   /**
@@ -28,7 +28,7 @@ export class BackendService {
    * @returns A hero Object
    */
   getHeroById(id: string): Promise<Hero> {
-    return this.http.get<Hero>(`${environment.api}/heroes/${id}`).toPromise();
+    return lastValueFrom(this.http.get<Hero>(`${environment.api}/heroes/${id}`));
   }
 
   /**
@@ -37,7 +37,7 @@ export class BackendService {
    * @returns a JSON response
    */
   createHero(newHero: Hero): Promise<JSON>{
-    return this.http.post<JSON>(`${environment.api}/heroes`, newHero).toPromise();
+    return lastValueFrom(this.http.post<JSON>(`${environment.api}/heroes`, newHero));
   }
   /**
    * deletes a hero from the backend API
@@ -45,6 +45,6 @@ export class BackendService {
    * @returns a JSON response
    */
   deleteHeroById(id: string): Promise<JSON>{
-    return this.http.delete<JSON>(`${environment.api}/heroes/${id}`).toPromise();
+    return lastValueFrom(this.http.delete<JSON>(`${environment.api}/heroes/${id}`));
   }
 }
